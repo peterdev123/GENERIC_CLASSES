@@ -12,18 +12,18 @@ public class MyMap<KEY, VALUE>{
     }
 
     public void put(KEY key, VALUE value) {
-        int pos = keys.indexOf(key);
-        if (pos != -1) {
-            values.set(pos, value);
-        } else {
+        if (!keys.contains(key)) {
             keys.add(key);
             values.add(value);
+        } else {
+            int pos = keys.indexOf(key);
+            values.set(pos, value);
         }
     }
 
     public VALUE get(KEY key) {
-        int pos = keys.indexOf(key);
-        if (pos != -1) {
+        if (keys.contains(key)) {
+            int pos = keys.indexOf(key);
             return (VALUE) values.get(pos);
         }
 
@@ -31,11 +31,10 @@ public class MyMap<KEY, VALUE>{
     }
 
     public VALUE remove(KEY key) {
-        int pos = keys.indexOf(key);
-        if (pos != -1) {
-            VALUE res = (VALUE) values.remove(pos);
+        if (keys.contains(key)) {
+            int pos = keys.indexOf(key);
             keys.remove(pos);
-            return res;
+            return (VALUE) values.remove(pos);
         }
 
         return null;
