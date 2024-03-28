@@ -2,16 +2,16 @@ package Map;
 
 import java.util.*;
 
-public class MyMap<K, V>{
-    private ArrayList<K> keys;
-    private ArrayList<V> values;
+public class MyMap<KEY, VALUE>{
+    private ArrayList<KEY> keys;
+    private ArrayList<VALUE> values;
 
     public MyMap() {
         this.keys =  new ArrayList<>();
         this.values = new ArrayList<>();
     }
 
-    public void put(K key, V value) {
+    public void put(KEY key, VALUE value) {
         int pos = keys.indexOf(key);
         if (pos != -1) {
             values.set(pos, value);
@@ -21,19 +21,19 @@ public class MyMap<K, V>{
         }
     }
 
-    public V get(K key) {
+    public VALUE get(KEY key) {
         int pos = keys.indexOf(key);
         if (pos != -1) {
-            return (V) values.get(pos);
+            return (VALUE) values.get(pos);
         }
 
         return null;
     }
 
-    public V remove(K key) {
+    public VALUE remove(KEY key) {
         int pos = keys.indexOf(key);
         if (pos != -1) {
-            V res = (V) values.remove(pos);
+            VALUE res = (VALUE) values.remove(pos);
             keys.remove(pos);
             return res;
         }
