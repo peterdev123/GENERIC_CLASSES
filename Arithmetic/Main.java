@@ -3,6 +3,7 @@ package Arithmetic;
 public class Main {
     public static void main(String[] args) {
         try {
+            // Not sureeeeee
             // Arithmetic<Integer, Integer> arithmetic = new Arithmetic<>(10, 0);
             // Arithmetic<Float, Double> arithmetic = new Arithmetic<>(10.1f, 10.5);
             // Arithmetic<Double, Double> arithmetic = new Arithmetic<>(10.9, 10.5);
