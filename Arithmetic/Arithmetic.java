@@ -44,7 +44,8 @@ public class Arithmetic<T1, T2> {
         double max = Math.max(((Number) t1).doubleValue(), ((Number) t2).doubleValue());
         return convert(max);
     }
-
+    
+    @SuppressWarnings("unchecked")
     private <T> T convert(double value) {
         if (t1 instanceof Double || t2 instanceof Double) {
             return (T) Double.valueOf(value);
